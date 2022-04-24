@@ -1,0 +1,27 @@
+﻿@model dynamic
+    ViewBag.Title = "Update";
+}
+
+<h2>Create Patient</h2>
+<form action="/Patient/Modify/@Model.Patient.PatientID" method="POST">
+    <div>
+        <label for="PatientName">Patient Name:</label> <input type="text" name="PatientName" value=@Model.Patient.PatientName/>
+    </div>
+    <div>
+        <label for="Problem">Problem:</label> <input type="text" name="Problem" value=@Model.Patient.Problem/>
+    </div>
+    <div>
+        <label>Doctors:</label>
+        <select name="DoctorId">
+            @foreach (var doctors in Model.Doctors)
+            {
+                <option value="@doctors.DoctorID">@doctors.DoctorName</option>
+
+            }
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Add Patient" />
+
+    </div>
+</form>

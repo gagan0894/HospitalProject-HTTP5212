@@ -1,0 +1,52 @@
+﻿@model List<HospitalProject_HTTP5212.Models.Doctor>
+@{
+    ViewData["Title"] = "List Doctors";
+    string[] Headers = new string[] { "Doctor Name","Speciality" };
+}
+<div style=" margin-top: 20px; margin-bottom: 20px;">
+    <a href="New"><h1>Add a new Doctor</h1></a>
+</div>
+<div class="table">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                @{
+                    foreach (var head in Headers)
+                    {
+                        <th>
+                            @head
+                        </th>
+                    }
+                }
+            </tr>
+        </thead>
+        <tbody>
+
+            @{
+                foreach (var doctor in Model)
+                {
+                        <tr>
+                            <td>
+                                @doctor.DoctorName
+                            </td>
+                            <td>
+                                @doctor.Speciality
+                            </td>
+                            <td>
+                                <div>
+                                    <a href="/Doctor/Update/@doctor.DoctorID">Update</a>
+                                </div>
+                            </td>
+                            <td>
+
+                                <div>
+                                    <a href="/Doctor/DeleteConfirm/@doctor.DoctorID">Delete</a>
+                                </div>
+                            </td>
+                        </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+</div>

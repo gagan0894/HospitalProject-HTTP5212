@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>Add a new Doctor here</h2>
+<form method="POST" action="/Doctor/Create">
+    <div style=" margin:20px;">
+        <label for="DoctorName">Doctor Name</label>
+        <input type="text" name="DoctorName" id="DoctorName" />
+    </div>
+    <div style=" margin:20px;">
+        <label for="Speciality">Speciality</label>
+        <input type="text" name="Speciality" id="Speciality" />
+    </div>
+
+    <div style=" margin:20px;">
+        <input type="submit" value="Add Doctor" name="addDoctor" id="addDoctor" />
+    </div>
+</form>
+

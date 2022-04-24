@@ -1,0 +1,23 @@
+﻿@model HospitalProject_HTTP5212.Models.Doctor
+
+<h2>Update Doctor here</h2>
+<form method="POST" action="/Doctor/Modify/@Model.DoctorID">
+    <div style=" margin:20px;">
+        <label for="DoctorName">Doctor Name</label>
+
+        <input type="text" name="DoctorName" id="DoctorName" value=@Model.DoctorName />
+
+    </div>
+
+    <div style=" margin:20px;">
+        <label for="Speciality">Speciality</label>
+
+        <input type="text" name="Speciality" id="Speciality" value=@Model.Speciality />
+
+    </div>
+
+    <div style=" margin:20px;">
+        <input type="submit" value="Update Doctor" name="updateDoctor" id="updateDoctor" />
+    </div>
+</form>
+
